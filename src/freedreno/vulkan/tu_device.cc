@@ -1359,9 +1359,7 @@ tu_get_properties(struct tu_physical_device *pdevice,
    props->optimalBufferCopyRowPitchAlignment = 128;
    props->nonCoherentAtomSize = 64;
 
-   props->apiVersion =
-      ((pdevice->info->chip >= 7) ? TU_API_VERSION :
-                                    VK_MAKE_VERSION(1, 3, VK_HEADER_VERSION));
+   props->apiVersion = TU_API_VERSION;
    props->driverVersion = vk_get_driver_version();
    props->vendorID = pdevice->instance->drirc.debug.force_vk_vendor != 0 ?
                      pdevice->instance->drirc.debug.force_vk_vendor : 0x5143;
